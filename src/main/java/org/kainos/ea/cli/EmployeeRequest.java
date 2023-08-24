@@ -1,17 +1,14 @@
 package org.kainos.ea.cli;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class EmployeeRequest {
     private String name;
     private double salary;
     private String bankAccNum;
     private String nationalInsuranceNum;
 
-    public EmployeeRequest(String name, double salary, String bankAccNum, String nationalInsuranceNum) {
-        this.name = name;
-        this.salary = salary;
-        this.bankAccNum = bankAccNum;
-        this.nationalInsuranceNum = nationalInsuranceNum;
-    }
 
     public String getName() {
         return name;
@@ -44,4 +41,19 @@ public class EmployeeRequest {
     public void setNationalInsuranceNum(String nationalInsuranceNum) {
         this.nationalInsuranceNum = nationalInsuranceNum;
     }
+
+    @JsonCreator
+    public EmployeeRequest(
+            @JsonProperty("name") String name,
+            @JsonProperty("salary") double salary,
+            @JsonProperty("bankAccNum") String bankAccNum,
+            @JsonProperty("nationalInsuranceNum") String NationalInsuranceNum)
+    {
+        this.name = name;
+        this.salary = salary;
+        this.bankAccNum = bankAccNum;
+        this.nationalInsuranceNum = NationalInsuranceNum;
+    }
+
+
 }
