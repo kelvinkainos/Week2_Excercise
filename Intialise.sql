@@ -12,9 +12,8 @@ CREATE TABLE Employee (
 );
 
 create Table DeliveryEmployee ( 
-	DeliveryEmployee SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     EmployeeID SMALLINT UNSIGNED NOT NULL,
-    PRIMARY KEY (DeliveryEmployee,EmployeeID),
+    PRIMARY KEY (EmployeeID),
     constraint fk_employeeid foreign key (EmployeeID)
     references Employee(EmployeeID)
 );
