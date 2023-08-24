@@ -23,16 +23,12 @@ public class DeliveryEmployeeController {
     @Path("/delivery")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Employee> getEmployees() {
-        Object deliveryEmployeeService;
         return deliveryEmployeeService.getAllDeliveryEmployees();
-
     }
     @POST
     @Path("/delivery")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createProject(DeliveryEmployeeRequest deliveryEmployee)
-    {
+    public Response createProject(DeliveryEmployeeRequest deliveryEmployee) {
         return deliveryEmployeeService.createEmployee(deliveryEmployee);
     }
-
 }
