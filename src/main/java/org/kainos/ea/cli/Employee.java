@@ -14,4 +14,44 @@ public class Employee {
         this.bankAccNum = bankAccNum;
         this.nationalInsuranceNum = nationalInsuranceNum;
     }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getBankAccNum() {
+        return bankAccNum;
+    }
+
+    public void setBankAccNum(String bankAccNum) {
+        this.bankAccNum = bankAccNum;
+    }
+
+    public String getNationalInsuranceNum() {
+        return nationalInsuranceNum;
+    }
+
+    public void setNationalInsuranceNum(String nationalInsuranceNum) {
+        this.nationalInsuranceNum = nationalInsuranceNum;
+    }
 }
