@@ -1,6 +1,6 @@
 package org.kainos.ea.api;
 
-public class DeliveryEmployeeService extends EmployeeService{
 
+public class DeliveryEmployeeService extends EmployeeService{
 
 }

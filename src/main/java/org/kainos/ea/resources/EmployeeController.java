@@ -16,11 +16,11 @@ import javax.ws.rs.core.Response;
 @Api("Evian Week 2 Exercise Employees API")
 @Path("/api/employees")
 public class EmployeeController {
-        private Employee employeeService = new EmployeeService();
-
-        @GET
-        @Produces(MediaType.APPLICATION_JSON)
-        public List<Employee> getEmployees() {
-            return employeeService.getAllEmployees();
-        }
+//        private Employee employeeService = new EmployeeService();
+//
+//        @GET
+//        @Produces(MediaType.APPLICATION_JSON)
+//        public List<Employee> getEmployees() {
+//            return employeeService.getAllEmployees();
+//        }
      }
