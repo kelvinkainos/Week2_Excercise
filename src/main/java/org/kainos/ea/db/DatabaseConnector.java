@@ -1,4 +1,4 @@
-package org.kainos.db;
+package org.kainos.ea.db;
 
 import java.io.FileInputStream;
 import java.sql.*;
