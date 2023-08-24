@@ -10,8 +10,7 @@ public class EmployeeDao {
     public int createEmployee(EmployeeRequest employee) throws SQLException {
         Connection c = databaseConnector.getConnection();
 
-        String insertStatement = "INSERT INTO Employee (Name, Salary, Bank_Acc_Number, NI_Number)" +
-                "VALUES (?,?,?,?);";
+        String insertStatement = "INSERT INTO Employee (Name, Salary, Bank_Acc_Number, NI_Number) VALUES (?,?,?,?);";
 
         PreparedStatement st = c.prepareStatement(insertStatement, Statement.RETURN_GENERATED_KEYS);
 
