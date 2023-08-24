@@ -28,7 +28,7 @@ public class EmployeeDao {
         return -1;
     }
 
-    public void deleteProduct(int id) throws SQLException {
+    public void deleteEmployee(int id) throws SQLException {
         Connection c = databaseConnector.getConnection();
 
         String deleteStatement = "DELETE FROM DeliveryEmployee WHERE ProductID = ?";
