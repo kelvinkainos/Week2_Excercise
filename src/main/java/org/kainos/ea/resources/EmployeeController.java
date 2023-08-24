@@ -22,12 +22,5 @@ public class EmployeeController {
         @Produces(MediaType.APPLICATION_JSON)
         public List<Employee> getEmployees() {
             return employeeService.getAllEmployees();
-
         }
-
-
-
-
-
      }
-
