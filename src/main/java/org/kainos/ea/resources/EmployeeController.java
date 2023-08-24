@@ -1,10 +1,8 @@
 package org.kainos.ea.resources;
 
 import io.swagger.annotations.Api;
-import org.kainos.ea.api.EmployeeService;
 import org.kainos.ea.cli.DeliveryEmployeeRequest;
 import org.kainos.ea.cli.Employee;
-import org.kainos.ea.client.FailedToGetEmployeeException;
 import org.kainos.ea.client.FailedtoCreateEmployee;
 import java.util.List;
 
@@ -34,4 +32,3 @@ public class EmployeeController {
             }
         }
      }
-
