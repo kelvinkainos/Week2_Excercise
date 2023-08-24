@@ -13,9 +13,8 @@ public class EvianApplicationConfiguration extends Configuration {
     @NotNull
     private final SwaggerBundleConfiguration swagger = new SwaggerBundleConfiguration();
 
-    @JsonProperty("swagger")
+    @JsonProperty
     public SwaggerBundleConfiguration getSwagger() {
-
         swagger.setResourcePackage("org.kainos.ea.resources");
         String[] schemes = {"http", "https"};
         swagger.setSchemes(schemes);
