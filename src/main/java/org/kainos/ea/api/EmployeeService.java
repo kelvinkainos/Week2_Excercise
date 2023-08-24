@@ -1,6 +1,7 @@
 package org.kainos.ea.api;
 
 import org.kainos.ea.cli.EmployeeRequest;
+import org.kainos.ea.client.EmployeeDoesNotExistException;
 import org.kainos.ea.db.EmployeeDao;
 
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 public class EmployeeService {
     private EmployeeDao employeeDao = new EmployeeDao();
 
-    public void deleteEmployee(int id) throws EmployeeDoesNoteExistException, FailedToDeleteProductException{
+    public void deleteEmployee(int id) throws EmployeeDoesNotExistException, FailedToDeleteEmployeeException{
         try {
             Product productToDelete = productDao.getProductsById(id);
 
