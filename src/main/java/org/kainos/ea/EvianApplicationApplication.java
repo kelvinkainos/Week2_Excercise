@@ -27,14 +27,14 @@ public class EvianApplicationApplication extends Application<EvianApplicationCon
             protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(Bootstrap<EvianApplicationConfiguration>
                                                                                        configuration) {
                 return Configuration.getSwagger();
-    }
+            }
 
-    @Override
-    public void run(final EvianApplicationConfiguration configuration,
-                    final Environment environment) {
-        // TODO: implement application
-        environment.jersey().register(new EmployeeController());
-        environment.jersey().register(new DeliveryEmployeeController());
-    }
+            @Override
+            public void run(final EvianApplicationConfiguration configuration,
+                            final Environment environment) {
+                // TODO: implement application
+                environment.jersey().register(new EmployeeController());
+                environment.jersey().register(new DeliveryEmployeeController());
+            }
 
-}
+        }
