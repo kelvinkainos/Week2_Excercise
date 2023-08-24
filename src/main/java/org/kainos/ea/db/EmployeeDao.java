@@ -27,4 +27,17 @@ public class EmployeeDao {
 
         return -1;
     }
+
+    public void deleteProduct(int id) throws SQLException {
+        Connection c = databaseConnector.getConnection();
+
+        String deleteStatement = "DELETE FROM DeliveryEmployee WHERE ProductID = ?";
+
+        PreparedStatement st = c.prepareStatement(deleteStatement);
+
+        st.setInt(1, id);
+
+        st.executeUpdate();
+
+    }
 }
