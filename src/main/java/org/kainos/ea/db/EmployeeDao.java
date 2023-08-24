@@ -1,8 +1,11 @@
 package org.kainos.ea.db;
 
+import org.kainos.ea.cli.Employee;
 import org.kainos.ea.cli.EmployeeRequest;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeDao {
     private final DatabaseConnector databaseConnector = new DatabaseConnector();
@@ -38,6 +41,35 @@ public class EmployeeDao {
         st.setInt(1, id);
 
         st.executeUpdate();
+
+    }
+
+    public List<Employee> getEmployees() throws SQLException {
+        try(Connection c = databaseConnector.getConnection()){
+            Statement st = c.createStatement();
+
+            ResultSet rs = st.executeQuery("SELECT EmployeeID, Name, Salary, Bank_Acc_Number, NI_Number FROM `Employee`;");
+
+            List<Employee> employeeList = new ArrayList<>();
+
+            while (rs.next()){
+                Employee em = new Employee(
+                        rs.getInt("EmployeeID"),
+                        rs.getString("Name"),
+                        rs.getDouble("Salary"),
+                        rs.getString("Bank_Acc_Number"),
+                        rs.getString("NI_Number")
+                );
+
+                employeeList.add(em);
+            }
+
+            return employeeList;
+
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return null;
+        }
 
     }
 }

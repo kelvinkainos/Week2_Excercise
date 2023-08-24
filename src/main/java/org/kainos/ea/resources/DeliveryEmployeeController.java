@@ -22,8 +22,10 @@ public class DeliveryEmployeeController {
     @GET
     @Path("/delivery")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Employee> getEmployees() {
-        return deliveryEmployeeService.getAllDeliveryEmployees();
+    public List<Employee> getEmployees()
+    {
+
+        return employeeService.getAllDeliveryEmployees();
     }
     @POST
     @Path("/delivery")
