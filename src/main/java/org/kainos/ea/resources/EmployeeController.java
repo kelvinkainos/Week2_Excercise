@@ -1,8 +1,10 @@
 package org.kainos.ea.resources;
 
 import io.swagger.annotations.Api;
+import org.kainos.ea.api.EmployeeService;
 import org.kainos.ea.cli.DeliveryEmployeeRequest;
 import org.kainos.ea.cli.Employee;
+import org.kainos.ea.client.FailedToGetEmployeeException;
 import org.kainos.ea.client.FailedtoCreateEmployee;
 import java.util.List;
 
@@ -16,11 +18,20 @@ import javax.ws.rs.core.Response;
 @Api("Evian Week 2 Exercise Employees API")
 @Path("/api/employees")
 public class EmployeeController {
-        private Employee employeeService = new EmployeeService();
+        private EmployeeService employeeService = new EmployeeService();
 
         @GET
         @Produces(MediaType.APPLICATION_JSON)
-        public List<Employee> getEmployees() {
-            return employeeService.getAllEmployees();
+        public Response getEmployees()
+        {
+            try {
+                return Response.ok(employeeService.getEmployees()).build();
+
+            } catch (FailedToGetEmployeeException e) {
+                System.out.println(e.getMessage());
+
+                return Response.serverError().build();
+            }
         }
      }
+

@@ -63,7 +63,6 @@ public class EmployeeDao {
 
                 employeeList.add(em);
             }
-
             return employeeList;
 
         }catch (SQLException e){
