@@ -13,13 +13,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-@Api("Evian Week 2 Exercise Delivery Employees API")
-@Path("/api")
+
+@Api("Evian Week 2 Exercise Employees API")
+@Path("/api/employees")
 public class DeliveryEmployeeController {
 
     private DeliveryEmployeeService deliveryEmployeeService = new DeliveryEmployeeService();
     @GET
-    @Path("/delivery_employees")
+    @Path("/delivery")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Employee> getEmployees() {
         Object deliveryEmployeeService;
@@ -27,11 +28,11 @@ public class DeliveryEmployeeController {
 
     }
     @POST
-    @Path("/delivery_employees")
+    @Path("/delivery")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createProject(DeliveryEmployeeRequest deliveryEmployee)
     {
-        return deliveryEmployeeService.createProduct(deliveryEmployee);
+        return deliveryEmployeeService.createEmployee(deliveryEmployee);
     }
 
 }
