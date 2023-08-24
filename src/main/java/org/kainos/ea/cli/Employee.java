@@ -7,4 +7,11 @@ public class Employee {
     private String bankAccNum;
     private String nationalInsuranceNum;
 
+    public Employee(int employeeId, String name, double salary, String bankAccNum, String nationalInsuranceNum) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.salary = salary;
+        this.bankAccNum = bankAccNum;
+        this.nationalInsuranceNum = nationalInsuranceNum;
+    }
 }
