@@ -3,6 +3,8 @@ package org.kainos.ea;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.kainos.ea.resources.DeliveryEmployeeController;
+import org.kainos.ea.resources.EmployeeController;
 
 public class EvianApplicationApplication extends Application<EvianApplicationConfiguration> {
 
@@ -24,6 +26,8 @@ public class EvianApplicationApplication extends Application<EvianApplicationCon
     public void run(final EvianApplicationConfiguration configuration,
                     final Environment environment) {
         // TODO: implement application
+        environment.jersey().register(new EmployeeController());
+        environment.jersey().register(new DeliveryEmployeeController());
     }
 
 }
